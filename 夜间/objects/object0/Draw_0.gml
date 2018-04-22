@@ -6,7 +6,7 @@ if (live_call()) return live_result;
 if mouse_check_button(mb_left)
    {
   
-//   effect_create_above(ef_flare, mouse_x,mouse_y, -1, c_white);
+   effect_create_above(ef_flare, mouse_x,mouse_y, -1, c_white);
    
       
 pc_emit[0] = part_emitter_create(pc_part[num])
