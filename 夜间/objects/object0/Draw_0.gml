@@ -3,17 +3,11 @@
 if (live_call()) return live_result;
 
 
-if mouse_check_button(mb_left)
+if device_mouse_check_button_pressed(0,mb_left)
    {
-  
-//   effect_create_above(ef_flare, mouse_x,mouse_y, -1, c_white);
-   
-      
-pc_emit[0] = part_emitter_create(pc_part[num])
 
-part_emitter_region  (pc_part[num], pc_emit[0], mouse_x-80, mouse_x+80, mouse_y-80, mouse_y+80, ps_shape_ellipse, ps_distr_gaussian);
+  part_particles_create(pc_emit[0],mouse_x,mouse_y,pc_part[num],100) 
 
-part_emitter_stream(pc_part[num],pc_emit[0],pc_part[num],-4)
    }
 
 

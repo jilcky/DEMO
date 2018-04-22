@@ -1,5 +1,6 @@
-if (live_call()) return live_result;
-FUCKsurface = -4
+
+show_debug_message("创建")
+
 
 num = 0
 pc_part[num] = part_type_create();
@@ -13,6 +14,9 @@ part_type_alpha3     (pc_part[num], 0.90, 0.99, 0);
 part_type_colour3    (pc_part[num], make_colour_rgb(223, 113, 38), make_colour_rgb(172, 50, 50), make_colour_rgb(118, 66, 138));
 part_type_blend      (pc_part[num], 1);
 part_type_gravity    (pc_part[num], 0.03, 85);
-
+	   
+pc_emit[0] = part_emitter_create(pc_part[num])
+global.Sname = part_system_create();
 
 pc_emit[0] = part_emitter_create(pc_part[num])
+part_emitter_region  (global.Sname , pc_emit[0], mouse_x-80, mouse_x+80, mouse_y-80, mouse_y+80, ps_shape_ellipse, ps_distr_gaussian);
